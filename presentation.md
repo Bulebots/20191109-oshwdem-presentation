@@ -1,4 +1,4 @@
-% Micromouse :mouse:
+% Micromouse :microscope: :mouse:
 % Clara Casas Castedo & Miguel Sánchez de León Peque
 % 2019-11-09
 
@@ -49,7 +49,7 @@ Soldering
 Robot physics
 =============
 
-Goals
+Goals :dart:
 -----
 
 >- Straight lines
@@ -93,7 +93,7 @@ v_M &= \frac{v_1 + v_2}{2}
 \end{aligned}
 $$
 
-Mechanical design
+Mechanical design :wrench:
 =================
 
 Wheels... but how many?
@@ -123,28 +123,13 @@ Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-co
 
 Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-content/uploads/2015/11/IMG_5761.jpg)
 
-Better start with 4...
+Better start with 2...
 ----------------------
 
-![](./figures/tetra.svg){width=50%}
-
-[More about "tetra" designs](https://athena-robots.readthedocs.io/en/latest/tetra.html).
-
-CAD designs
+[CAD designs](https://bulebule.readthedocs.io/en/latest/building.html#rim)
 -----------
 
-- [Motor mount](https://github.com/Theseus/bulebule/blob/master/3d/mount.py)
-- [Rim](https://github.com/Theseus/bulebule/blob/master/3d/rim.py)
-- Both designed with [CadQuery](https://github.com/dcowden/cadquery) (Python)
-- 3D printed (FDM)
-
----
-
 ![](./figures/tetra_train.jpg)
-
----
-
-![](./videos/completed_design.mp4){width=889 height=500}
 
 Control
 =======
@@ -164,13 +149,6 @@ PID! :+1: :joy:
 ![](./figures/control.jpg){width=90%}
 
 Image taken from [micromouseusa.com](http://micromouseusa.com/) ([Futura Project](http://micromouseusa.com/?page_id=1342))
-
-Characteristics
----------------
-
-- Positional PD (velocity error is integrated)
-- PI for sensor error
-- [Green Ye's Futura Project documentation :heart_eyes:](http://micromouseusa.com/?page_id=1342)
 
 Speed profile
 -------------
@@ -205,30 +183,43 @@ Discrete integration approximation
 Maze-solving algorithm
 ======================
 
-Floodfill :mouse:
+Floodfill :ocean:
 -----------------
 
 1. Assume there are no walls
 1. Calculate distances to target
 1. While goal not reached...
 1. Go to the cell that is closest to the target
+1. Update walls
 1. Update distances
-
-Example
--------
-
-![](./figures/flood-fill.png){width=100%}
-
-Image taken from [micromouseusa.com](http://micromouseusa.com/) ([Futura Project](http://micromouseusa.com/?page_id=1342))
 
 ---
 
-![](./videos/maze-simulator.mp4){width=650 height=650}
+<video src="./videos/maze-simulator.mp4" controls muted>
+</video>
 
-Implementation details
-----------------------
+Update process :eyes:
+--------------
 
-- [Green Ye's Futura Project documentation :heart_eyes:](http://micromouseusa.com/?page_id=1342)
+```python
+# Initialize distances
+distances = inf
+for goal in goal_cells:
+  queue.push(goal)
+  distances[goal] = 0
+
+# Flood fill
+while not queue.is_empty():
+    cell = queue.pop()
+    distance = distances[cell] + 1
+    for direction in ["east", "south", "west", "north"]:
+        if cell.has_wall(direction):
+            continue
+        if distances[cell.neighbor(direction)] <= distance:
+            continue
+        distances[cell] = distance
+        queue.push(cell)
+```
 
 Software design
 ===============
@@ -358,55 +349,25 @@ And then...
 Time... :joy:
 -------------
 
-Next stop: Portugal :tada:
-==========================
+That's all! :tada:
+==================
 
-Current state
--------------
+Resources :link:
+-----
 
-![](./videos/current_state.mp4){width=889 height=500}
+**Bulebots**
 
-Done
-----
+: - [github.com/Bulebots](https://github.com/Bulebots/bulebule)
+: - [bulebule.readthedocs.io](https://bulebule.readthedocs.io)
 
-- Functional micromouse
-- $0.8 ~ m/s$ (straight)
-- $0.666 ~ m/s$ (turn)
-- $5 ~ m/s^2$
-- Only search speed
-- Flood fill
+**Peter Harrison**
 
-TODO
-----
-
-- Gyroscope integration (PCB redesign)
-- More complete maze exploration
-- Path selection
-- Fast run
-- Diagonals
-- New wheels (maybe)
-- ~60 issues in GitHub :muscle: :muscle:
-
-Thanks :heart:
---------------
+: - [micromouseonline.com](http://micromouseonline.com)
 
 **Green Ye**
 
-: Who shares [details about his micromice](http://www.greenye.net/) and posts many useful resources in [micromouseusa.com](http://micromouseusa.com>)
+: - [www.greenye.net](http://www.greenye.net/)
+: - [micromouseusa.com](http://micromouseusa.com>)
 
-**Peter Harris**
-
-: Who posts many useful and detailed resources in [micromouseonline.com](http://micromouseonline.com)
-
-**Kato-san**
-
-: Who shares [details about his micromice](http://seesaawiki.jp/w/robolabo/)
-  and posts some [useful resources](http://blog.livedoor.jp/robolabo/)
-
-Links :link:
------
-
-- [https://github.com/Theseus/bulebule](https://github.com/Theseus/bulebule)
-- [https://bulebule.readthedocs.io](https://bulebule.readthedocs.io)
-
-![](./figures/presentation-qr.png){width=40%}
+Thanks! :heart:
+--------------
