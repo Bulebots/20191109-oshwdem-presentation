@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg4107"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs4101" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="733.59381"
+     inkscape:cy="390.05528"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4104">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-87)">
+    <circle
+       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.52916664;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4113"
+       cx="139.24742"
+       cy="114.45492"
+       r="6.6817379" />
+    <g
+       id="g4170"
+       transform="matrix(0.92585891,0,0,0.85657636,31.234288,17.595202)">
+      <rect
+         y="160.1317"
+         x="25.097023"
+         height="29.452271"
+         width="49.764751"
+         id="rect4155"
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:0.47654408;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <flowRoot
+         transform="matrix(0.26458333,0,0,0.26458333,0,87)"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         id="flowRoot4157"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4159"><rect
+             y="312.86819"
+             x="121.21831"
+             height="74.751259"
+             width="206.07111"
+             id="rect4161" /></flowRegion><flowPara
+           id="flowPara4163">ADC 1</flowPara></flowRoot>    </g>
+    <rect
+       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.41148481;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4176"
+       width="199.67166"
+       height="103.26453"
+       x="44.127403"
+       y="144.6071" />
+    <g
+       id="g4212"
+       transform="translate(7.0393731,-6.858629)">
+      <rect
+         y="161.1891"
+         x="111.14614"
+         height="25.199295"
+         width="45.51178"
+         id="rect4178"
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:0.45320645;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text4182"
+         y="177.26326"
+         x="115.99496"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332"
+           y="177.26326"
+           x="115.99496"
+           id="tspan4180"
+           sodipodi:role="line">GPIOS</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="118.66766"
+       y="170.84879"
+       id="text4186"><tspan
+         sodipodi:role="line"
+         id="tspan4184"
+         x="118.66766"
+         y="180.21255"
+         style="stroke-width:0.26458332" /><tspan
+         sodipodi:role="line"
+         x="118.66766"
+         y="193.44173"
+         style="stroke-width:0.26458332"
+         id="tspan4188" /></text>
+    <g
+       id="g4223"
+       transform="translate(6.9490181,34.210484)">
+      <rect
+         y="160.69255"
+         x="178.53604"
+         height="24.054256"
+         width="44.901279"
+         id="rect4214"
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:0.52916664;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text4218"
+         y="176.19418"
+         x="186.55414"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332"
+           y="176.19418"
+           x="186.55414"
+           id="tspan4216"
+           sodipodi:role="line">PWM</tspan></text>
+    </g>
+    <g
+       id="g4234"
+       transform="translate(-16.57071,-1.6036172)">
+      <rect
+         y="157.48531"
+         x="208.47023"
+         height="23.519718"
+         width="39.555889"
+         id="rect4225"
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:0.52916664;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text4229"
+         y="171.91786"
+         x="213.81563"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332"
+           y="171.91786"
+           x="213.81563"
+           id="tspan4227"
+           sodipodi:role="line">UART</tspan></text>
+    </g>
+  </g>
+</svg>
