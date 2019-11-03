@@ -46,6 +46,46 @@ Soldering
 
 ![](./figures/soldering.JPG){width=85%}
 
+
+Mechanical design :wrench:
+=================
+
+Wheels... but how many?
+-----------------------
+
+---
+
+![](./figures/2-wheels.jpg){width=80%}
+
+Image taken from [micromouseusa.com](http://micromouseusa.com/wp-content/uploads/2014/03/futura-Cover.jpg)
+
+---
+
+![](./figures/4-wheels.jpg){width=70%}
+
+Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-content/uploads/2017/10/Decimus5A.jpg)
+
+---
+
+![](./figures/6-wheels.jpg){width=70%}
+
+Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-content/uploads/files/CIMG1994-full.jpg)
+
+---
+
+![](./figures/8-wheels.jpg){width=70%}
+
+Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-content/uploads/2015/11/IMG_5761.jpg)
+
+Better start with 2...
+----------------------
+
+[CAD designs](https://bulebule.readthedocs.io/en/latest/building.html#rim)
+-----------
+
+![](./figures/tetra_train.jpg)
+
+
 Robot physics
 =============
 
@@ -92,44 +132,6 @@ v_M &= v_1 + wd \\
 v_M &= \frac{v_1 + v_2}{2}
 \end{aligned}
 $$
-
-Mechanical design :wrench:
-=================
-
-Wheels... but how many?
------------------------
-
----
-
-![](./figures/2-wheels.jpg){width=80%}
-
-Image taken from [micromouseusa.com](http://micromouseusa.com/wp-content/uploads/2014/03/futura-Cover.jpg)
-
----
-
-![](./figures/4-wheels.jpg){width=70%}
-
-Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-content/uploads/2017/10/Decimus5A.jpg)
-
----
-
-![](./figures/6-wheels.jpg){width=70%}
-
-Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-content/uploads/files/CIMG1994-full.jpg)
-
----
-
-![](./figures/8-wheels.jpg){width=70%}
-
-Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-content/uploads/2015/11/IMG_5761.jpg)
-
-Better start with 2...
-----------------------
-
-[CAD designs](https://bulebule.readthedocs.io/en/latest/building.html#rim)
------------
-
-![](./figures/tetra_train.jpg)
 
 Control
 =======
