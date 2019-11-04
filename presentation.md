@@ -172,11 +172,10 @@ Approach
 PID! :+1: :joy:
 ---------------
 
----
+Feedback controller
+-------------------
 
-![](./figures/control.jpg){width=90%}
-
-Image taken from [micromouseusa.com](http://micromouseusa.com/) ([Futura Project](http://micromouseusa.com/?page_id=1342))
+![](./figures/control.svg){width=100%}
 
 Speed profile
 -------------
