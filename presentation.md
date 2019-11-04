@@ -177,6 +177,10 @@ Feedback controller
 
 ![](./figures/control.svg){width=100%}
 
+
+Trapezoidal speed profiles
+==========================
+
 Speed profile
 -------------
 
@@ -205,7 +209,109 @@ Discrete integration approximation
 
 ![](./figures/dynamic-turns.png){width=40%}
 
-[Notebook in GitHub](https://github.com/Theseus/bulebule/blob/master/scripts/notebooks/dynamic_turns.ipynb)
+
+Sinusoidal speed profiles
+=========================
+
+Why not?
+--------
+
+$$
+\omega = \omega_{max} sin\left(\frac{x}{\lambda}\right)
+$$
+
+$$
+\dot{\omega} = \frac{\omega_{max}}{\lambda} cos\left(\frac{x}{\lambda}\right)
+$$
+
+Thanks [Peter](http://micromouseonline.com)! :smile:
+
+Theoretical forces (straight)
+------------------
+
+$$
+F_α = {mα \over 2}
+$$
+
+Theoretical forces (turn)
+------------------
+
+Angular acceleration
+
+$$
+F_{Δω} = {IΔω \over 2T}
+$$
+
+Centrifugal force
+
+$$
+F_ω = {mvω \over 2}
+$$
+
+Forces on each tire
+-------------------
+
+$$
+F_R = \sqrt{(F_α + F_{Δω})^2 + F_ω^2} \\
+F_L = \sqrt{(F_α - F_{Δω})^2 + F_ω^2}
+$$
+
+While turning $F_\alpha = 0$:
+
+$$
+F = \sqrt{\left({I\dot{\omega} \over 2T}\right)^2 + \left({mv\omega \over 2}\right)^2}
+$$
+
+So... :tada: :tada:
+-----
+
+$$
+F = \sqrt{{I^2\omega_{max}^2 \over 4T^2\lambda^2} cos^2\left({x \over \lambda}\right) + {m^2 \omega_{max}^2 v^2 \over 4}  sin^2\left({x \over \lambda}\right)}
+$$
+
+$$
+F = \sqrt{k_1 cos^2\left({x \over \lambda}\right) + k_2 sin^2\left({x \over \lambda}\right)}
+$$
+
+If $k_1 = k_2 = k_0^2$:
+
+$$
+F = k_0 \sqrt{cos^2\left({x \over \lambda}\right) + sin^2\left({x \over \lambda}\right)} = k_0
+$$
+
+Search turn trajectory
+----------------------
+
+![](./figures/turn-search-trajectory.png)
+
+Search turn forces
+------------------
+
+![](./figures/turn-search-forces.png)
+
+90° turn trajectory
+-------------------
+
+![](./figures/turn-90-trajectory.png)
+
+90° turn forces
+---------------
+
+![](./figures/turn-90-forces.png)
+
+Other trajectories
+------------------
+
+![](./figures/turn-135-trajectory.png)
+
+[Notebook on GitHub](https://github.com/Bulebots/bulebule/blob/master/scripts/notebooks/sinusoidal_turns.ipynb)
+
+Advantages
+----------
+
+- Constant force
+- Linear speed does not affect turn parameters!
+
 
 Maze-solving algorithm
 ======================
