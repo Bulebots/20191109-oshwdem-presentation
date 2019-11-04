@@ -46,6 +46,32 @@ Soldering
 
 ![](./figures/soldering.JPG){width=85%}
 
+Sensors - curve fitting
+-----------------------
+
+$$
+y = e^{\frac{a}{x+b}}
+$$
+
+![](./figures/sensors-raw-on.png)
+
+More on [micromouseonline.com](http://www.micromouseonline.com/2010/07/07/calibrating-reflective-sensors/)
+
+Sensors - error
+---------------
+
+![](./figures/sensors-error.png)
+
+Sensors - linearity
+-------------------
+
+![](./figures/sensors-linearity.png)
+
+Sensors - ambient noise
+-----------------------
+
+![](./figures/sensors-raw-off.png)
+
 
 Mechanical design :wrench:
 =================
@@ -294,35 +320,14 @@ Maze
 
 ![](./figures/maze_home.jpg)
 
-Errors, debugging...
-====================
+
+Logging
+=======
 
 ---
 
 ![](./figures/yoda.jpg)
 
-Eye-opening experience
-----------------------
-
-![](./figures/calibration_test.jpg){width=80%}
-
----
-
-$$
-y = e^{\frac{a}{x+b}}
-$$
-
-![](./figures/sensors_manual_calibration.png)
-
-More on [micromouseonline.com](http://www.micromouseonline.com/2010/07/07/calibrating-reflective-sensors/)
-
----
-
-![](./figures/sensors_autom_calibration.jpg){width=70%}
-
----
-
-![](./figures/sensor_autom_cal.png)
 
 Costs
 =====
