@@ -1,4 +1,4 @@
-% Micromouse
+% Micromouse :microscope: :mouse:
 % Clara Casas Castedo & Miguel Sánchez de León Peque
 % 2019-11-09
 
@@ -195,7 +195,9 @@ Image taken from [http://haido.blog.jp/](https://livedoor.blogimg.jp/haido2/imgs
 And the fan?
 ------------
 
-![](./figures/fan_micromouse.jpg){width=50%}
+![](./figures/fan.jpg){width=60%}
+
+Image taken from [http://haido.blog.jp/](https://livedoor.blogimg.jp/haido2/imgs/1/6/16569b30.jpg)
 
 
 Robot physics
