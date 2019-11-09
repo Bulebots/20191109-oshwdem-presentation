@@ -1,11 +1,12 @@
-% Micromouse :microscope: :mouse:
+% Micromouse
 % Clara Casas Castedo & Miguel Sánchez de León Peque
 % 2019-11-09
 
 Introduction
 ============
 
----
+OSHWDem :octopus:
+-------
 
 <video src="./videos/bulebule_camera_onboard.mp4" controls muted>
 </video>
@@ -14,40 +15,46 @@ Introduction
 Micromouse
 ----------
 
-![](./figures/maze.jpg)
+![](./figures/old_maze.jpg)
 
 
-Hardware
-========
-
----
-
-![](./figures/noedges.jpg){width=50%}
-
-
-Prototyping
------------
-
-![](./figures/proto.jpg){width=90%}
-
-
-Schematic
----------
-
-![](./figures/schematic.png){width=100%}
-
+Electronics
+===========
 
 ---
 
-<iframe title="Theseus" width="1000" height="650" scrolling="no" frameborder="0" name="Theseus" class="eda_tool" src="https://upverter.com/eda/embed/#tool=pcb,designId=3d82ffa66d538f81,actionId="></iframe>
 
-Soldering
----------
 
-![](./figures/soldering.JPG){width=85%}
 
-Sensors - curve fitting
------------------------
+Infrarred sensors
+-----------------
+
+![](./figures/infrarred_sensors.jpg){width=50%}
+
+---
+
+Mount
+-----
+
+![](./figures/mount.png){width=90%}
+
+
+Simple schematic
+----------------
+
+![](./figures/schematic_simple.png)
+
+---
+
+Complex schematic
+-----------------
+
+![](./figures/schematic_complex.png)
+
+---
+
+Distance calculation
+--------------------
 
 $$
 y = e^{\frac{a}{x+b}}
@@ -57,20 +64,87 @@ $$
 
 More on [micromouseonline.com](http://www.micromouseonline.com/2010/07/07/calibrating-reflective-sensors/)
 
-Sensors - error
----------------
+---
+
+Noise cancellation
+------------------
+
+![](./figures/sensors-raw-off.png)
+
+---
+
+Errors 
+------
 
 ![](./figures/sensors-error.png)
 
-Sensors - linearity
--------------------
+
+Linearity 
+------
 
 ![](./figures/sensors-linearity.png)
 
-Sensors - ambient noise
------------------------
 
-![](./figures/sensors-raw-off.png)
+Motor Drivers
+-------------
+
+![](./figures/motor_driver.jpg){width=50%}
+
+
+Encoders
+--------
+
+![](./figures/Quadrature_Diagram.svg){}
+
+Gyroscope
+---------
+
+![](./figures/mpu_6500.jpg){width=50%}
+
+
+LEDs, speaker, buttons, switch
+------------------------------
+
+
+Bluetooth
+---------
+
+![](./figures/bluetooth.jpg){width=65%}
+
+---
+
+Battery and power coversors
+---------------------------
+
+
+---
+
+Microcontroller
+--------------
+
+![](./figures/bluepill.jpg){width=60%}
+
+---
+
+Peripheral | Use
+--- | ---
+ADC1 | Phototransistors
+ADC2 | Battery
+TIM1 | PWM signal for speaker / Sensors state machine
+TIM2 | Left motor quadrature encoders
+TIM3 | PWM signals for left and right motors
+TIM4 | Right motor quadrature encoders
+USART | Serial, Bluetooth
+SPI | Gyroscope
+GPIOS | Infrarred emitters, LEDs, buttons
+SYSTICK | Control, encoder, distances
+
+---
+
+Prototyping
+-----------
+
+![](./figures/proto.jpg){width=90%}
 
 
 Mechanical design :wrench:
@@ -99,17 +173,29 @@ Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-co
 
 ---
 
-![](./figures/8-wheels.jpg){width=70%}
+![](./figures/8-wheels.jpg)
 
 Image taken from [micromouseonline.com](http://www.micromouseonline.com/wp/wp-content/uploads/2015/11/IMG_5761.jpg)
 
 Better start with 2...
 ----------------------
 
+![](./figures/encoder.jpg){width=70%}
+
+Image taken from [http://haido.blog.jp/](https://livedoor.blogimg.jp/haido2/imgs/3/b/3bce6ea8.jpg)
+
 [CAD designs](https://bulebule.readthedocs.io/en/latest/building.html#rim)
 -----------
 
-![](./figures/tetra_train.jpg)
+![](./figures/cad.jpg){width=60%}
+
+Image taken from [http://haido.blog.jp/](https://livedoor.blogimg.jp/haido2/imgs/4/1/418daa66.jpg)
+
+
+And the fan?
+------------
+
+![](./figures/fan_micromouse.jpg){width=50%}
 
 
 Robot physics
@@ -251,25 +337,11 @@ while not queue.is_empty():
 Software design
 ===============
 
----
-
-Peripheral | Use
---- | ---
-ADC1 | Phototransistors
-ADC2 | Battery
-TIM1 | Sensors state machine
-TIM2 | Left motor quadrature encoder
-TIM3 | PWM signals for left and right motors
-TIM4 | Right motor quadrature encoder
-USART | Serial, Bluetooth
-GPIOS | Infrarred emitters, LEDs, buttons
-SYSTICK | Control
-
 Sensors state machine
 ---------------------
 
 - 16 KHz trigger
-- Sequentially power on and off
+- Sequentially power on and off 
 - 4 states * 4 sensors
 
 Systick
@@ -277,17 +349,16 @@ Systick
 
 - 1 KHz trigger
 - Update ideal speed, encoder, distances
-- Motor control
+- Motor control 
 
 Main
 ----
 
-- Setup
+- Setup 
 - Buttons, debug LEDs
-- Side sensors calibration
+- Speed profiles
 - Algorithm
 - Communication
-- Collision detection
 
 
 Required tools
@@ -326,6 +397,12 @@ Logging
 ---
 
 ![](./figures/yoda.jpg)
+
+
+Plotting 
+--------
+
+![](./figures/log.png){width=60%}
 
 
 Costs
