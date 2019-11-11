@@ -436,10 +436,11 @@ while not queue.is_empty():
     for direction in ["east", "south", "west", "north"]:
         if cell.has_wall(direction):
             continue
-        if distances[cell.neighbor(direction)] <= distance:
+        neighbor = cell.neighbor(direction)
+        if distances[neighbor] <= distance:
             continue
-        distances[cell] = distance
-        queue.push(cell)
+        distances[neighbor] = distance
+        queue.push(neighbor)
 ```
 
 Software design
