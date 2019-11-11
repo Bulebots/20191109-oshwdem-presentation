@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Clara Casas Castedo &amp; Miguel Sánchez de León Peque">
+  <meta name="dcterms.date" content="2019-11-09">
+  <title>Micromouse 🔬 🐭</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="revealjs/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="revealjs/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="markdownrevealstyle/custom.css">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="revealjs/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="katex/katex.min.js"></script><script src="katex/contrib/auto-render.min.js"></script><script>document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body);
+  });</script><link rel="stylesheet" href="katex/katex.min.css" />
+
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+  crossorigin="anonymous"></script>
+<script>
+  function addEvent(element, eventName, fn) {
+    if (element.addEventListener)
+      element.addEventListener(eventName, fn, false);
+    else if (element.attachEvent)
+      element.attachEvent('on' + eventName, fn);
+  }
+
+  addEvent(window, 'load', function() {
+    twemoji.parse(document.body, {'folder': 'svg', 'ext': '.svg'});
+  });
+</script>
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section data-background="markdownrevealstyle/background.svg" id="title-slide">
+  <h1 class="title">Micromouse 🔬 🐭</h1>
+  <p class="author">Clara Casas Castedo &amp; Miguel Sánchez de León Peque</p>
+  <p class="date">2019-11-09</p>
+</section>
+
+<section data-background="markdownrevealstyle/background.svg"><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="oshwdem" class="slide level2">
+<h2>OSHWDem 🐙</h2>
+<video src="./videos/bulebule_camera_onboard.mp4" controls muted>
+</video>
+</section><section id="micromouse" class="slide level2">
+<h2>Micromouse</h2>
+<p><img data-src="./figures/old_maze.jpg" /></p>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="electronics" class="title-slide slide level1"><h1>Electronics</h1></section><section id="infrarred-sensors" class="slide level2">
+<h2>Infrarred sensors</h2>
+<p><img data-src="./figures/infrarred_sensors.jpg" style="width:50.0%" /></p>
+</section><section id="mount" class="slide level2">
+<h2>Mount</h2>
+<p><img data-src="./figures/mount.png" style="width:90.0%" /></p>
+</section><section id="simple-schematic" class="slide level2">
+<h2>Simple schematic</h2>
+<p><img data-src="./figures/schematic_simple.png" /></p>
+</section><section id="complex-schematic" class="slide level2">
+<h2>Complex schematic</h2>
+<p><img data-src="./figures/schematic_complex.png" /></p>
+</section><section id="distance-calculation" class="slide level2">
+<h2>Distance calculation</h2>
+<p><span class="math display">\[
+y = e^{\frac{a}{x+b}}
+\]</span></p>
+<p><img data-src="./figures/sensors-raw-on.png" /></p>
+<p>More on <a href="http://www.micromouseonline.com/2010/07/07/calibrating-reflective-sensors/">micromouseonline.com</a></p>
+</section><section id="noise-cancellation" class="slide level2">
+<h2>Noise cancellation</h2>
+<p><img data-src="./figures/sensors-raw-off.png" /></p>
+</section><section id="errors" class="slide level2">
+<h2>Errors</h2>
+<p><img data-src="./figures/sensors-error.png" /></p>
+</section><section id="linearity" class="slide level2">
+<h2>Linearity</h2>
+<p><img data-src="./figures/sensors-linearity.png" /></p>
+</section><section id="motor-drivers" class="slide level2">
+<h2>Motor Drivers</h2>
+<p><img data-src="./figures/motor_driver.jpg" style="width:50.0%" /></p>
+</section><section id="encoders" class="slide level2">
+<h2>Encoders</h2>
+<p><img data-src="./figures/Quadrature_Diagram.svg" /></p>
+</section><section id="gyroscope" class="slide level2">
+<h2>Gyroscope</h2>
+<p><img data-src="./figures/mpu_6500.jpg" style="width:50.0%" /></p>
+</section><section id="leds-speaker-buttons-switch" class="slide level2">
+<h2>LEDs, speaker, buttons, switch</h2>
+</section><section id="bluetooth" class="slide level2">
+<h2>Bluetooth</h2>
+<p><img data-src="./figures/bluetooth.jpg" style="width:65.0%" /></p>
+</section><section id="battery-and-power-coversors" class="slide level2">
+<h2>Battery and power coversors</h2>
+</section><section id="microcontroller" class="slide level2">
+<h2>Microcontroller</h2>
+<p><img data-src="./figures/bluepill.jpg" style="width:60.0%" /></p>
+</section><section class="slide level2">
+
+<table>
+<thead>
+<tr class="header">
+<th>Peripheral</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ADC1</td>
+<td>Phototransistors</td>
+</tr>
+<tr class="even">
+<td>ADC2</td>
+<td>Battery</td>
+</tr>
+<tr class="odd">
+<td>TIM1</td>
+<td>PWM signal for speaker / Sensors state machine</td>
+</tr>
+<tr class="even">
+<td>TIM2</td>
+<td>Left motor quadrature encoders</td>
+</tr>
+<tr class="odd">
+<td>TIM3</td>
+<td>PWM signals for left and right motors</td>
+</tr>
+<tr class="even">
+<td>TIM4</td>
+<td>Right motor quadrature encoders</td>
+</tr>
+<tr class="odd">
+<td>USART</td>
+<td>Serial, Bluetooth</td>
+</tr>
+<tr class="even">
+<td>SPI</td>
+<td>Gyroscope</td>
+</tr>
+<tr class="odd">
+<td>GPIOS</td>
+<td>Infrarred emitters, LEDs, buttons</td>
+</tr>
+<tr class="even">
+<td>SYSTICK</td>
+<td>Control, encoder, distances</td>
+</tr>
+</tbody>
+</table>
+</section><section id="prototyping" class="slide level2">
+<h2>Prototyping</h2>
+<p><img data-src="./figures/proto.jpg" style="width:90.0%" /></p>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="mechanical-design" class="title-slide slide level1"><h1>Mechanical design 🔧</h1></section><section id="wheels-but-how-many" class="slide level2">
+<h2>Wheels… but how many?</h2>
+</section><section class="slide level2">
+
+<p><img data-src="./figures/2-wheels.jpg" style="width:80.0%" /></p>
+<p>Image taken from <a href="http://micromouseusa.com/wp-content/uploads/2014/03/futura-Cover.jpg">micromouseusa.com</a></p>
+</section><section class="slide level2">
+
+<p><img data-src="./figures/4-wheels.jpg" style="width:70.0%" /></p>
+<p>Image taken from <a href="http://www.micromouseonline.com/wp/wp-content/uploads/2017/10/Decimus5A.jpg">micromouseonline.com</a></p>
+</section><section class="slide level2">
+
+<p><img data-src="./figures/6-wheels.jpg" style="width:70.0%" /></p>
+<p>Image taken from <a href="http://www.micromouseonline.com/wp/wp-content/uploads/files/CIMG1994-full.jpg">micromouseonline.com</a></p>
+</section><section class="slide level2">
+
+<p><img data-src="./figures/8-wheels.jpg" /></p>
+<p>Image taken from <a href="http://www.micromouseonline.com/wp/wp-content/uploads/2015/11/IMG_5761.jpg">micromouseonline.com</a></p>
+</section><section id="better-start-with-2" class="slide level2">
+<h2>Better start with 2…</h2>
+<p><img data-src="./figures/encoder.jpg" style="width:70.0%" /></p>
+<p>Image taken from <a href="https://livedoor.blogimg.jp/haido2/imgs/3/b/3bce6ea8.jpg">http://haido.blog.jp/</a></p>
+</section><section id="cad-designs" class="slide level2">
+<h2><a href="https://bulebule.readthedocs.io/en/latest/building.html#rim">CAD designs</a></h2>
+<p><img data-src="./figures/cad.jpg" style="width:60.0%" /></p>
+<p>Image taken from <a href="https://livedoor.blogimg.jp/haido2/imgs/4/1/418daa66.jpg">http://haido.blog.jp/</a></p>
+</section><section id="and-the-fan" class="slide level2">
+<h2>And the fan?</h2>
+<p><img data-src="./figures/fan.jpg" style="width:60.0%" /></p>
+<p>Image taken from <a href="https://livedoor.blogimg.jp/haido2/imgs/1/6/16569b30.jpg">http://haido.blog.jp/</a></p>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="robot-physics" class="title-slide slide level1"><h1>Robot physics</h1></section><section id="goals" class="slide level2">
+<h2>Goals 🎯</h2>
+<ul>
+<li class="fragment">Straight lines</li>
+<li class="fragment">Turns</li>
+<li class="fragment">👍 😂</li>
+</ul>
+</section><section id="limitations" class="slide level2">
+<h2>Limitations 😅</h2>
+<ul>
+<li>Acceleration</li>
+</ul>
+</section><section id="system" class="slide level2">
+<h2>System</h2>
+<p><img data-src="./figures/physical_system.png" /></p>
+</section><section id="angular-velocity" class="slide level2">
+<h2>Angular velocity</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{v_2} &amp;= \overline{v_1} + \overline{w} \wedge \overline{r_{21}} \\
+v_2 \overline{u} &amp;= v_1 \overline{u} + (w \overline{u_z}) \wedge (2d \overline{t}) \\
+v_2 &amp;= v_1 + 2dw \\
+\\
+w &amp;= \frac{v_2 - v_1}{2d}
+\end{aligned}
+\]</span></p>
+</section><section id="linear-velocity" class="slide level2">
+<h2>Linear velocity</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\overline{v_M} &amp;= \overline{v_1} + \overline{w} \wedge \overline{r_{M1}} \\
+v_M \overline{u} &amp;= v_1 \overline{u} + (w \overline{u_z}) \wedge (d \overline{t}) \\
+v_M &amp;= v_1 + wd \\
+&amp;= v_1 + \left(\frac{v_2 - v_1}{2d}\right)d \\
+\\
+v_M &amp;= \frac{v_1 + v_2}{2}
+\end{aligned}
+\]</span></p>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="control" class="title-slide slide level1"><h1>Control</h1></section><section id="approach" class="slide level2">
+<h2>Approach</h2>
+<ul>
+<li class="fragment">Neural networks?</li>
+<li class="fragment">State space control?</li>
+<li class="fragment">…</li>
+</ul>
+</section><section id="pid" class="slide level2">
+<h2>PID! 👍 😂</h2>
+</section><section id="feedback-controller" class="slide level2">
+<h2>Feedback controller</h2>
+<p><img data-src="./figures/control.svg" style="width:100.0%" /></p>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="trapezoidal-speed-profiles" class="title-slide slide level1"><h1>Trapezoidal speed profiles</h1></section><section id="speed-profile" class="slide level2">
+<h2>Speed profile</h2>
+<p><img data-src="./figures/speed-profile.png" style="width:60.0%" /></p>
+</section><section id="calculating-turns" class="slide level2">
+<h2>Calculating turns</h2>
+<p>From the motion equations:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dot{x} &amp;= v_m cos \theta \\
+\dot{y} &amp;= v_m sin \theta
+\end{aligned}
+\]</span></p>
+<p>Considering <span class="math inline">\(\dot{w} \equiv cte.\)</span> and <span class="math inline">\(v_m \equiv cte.\)</span>:</p>
+<p><span class="math display">\[
+\theta = w_0 t + \frac{k}{d} t^2
+\]</span></p>
+</section><section id="discrete-integration-approximation" class="slide level2">
+<h2>Discrete integration approximation</h2>
+<p><img data-src="./figures/dynamic-turns.png" style="width:40.0%" /></p>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="sinusoidal-speed-profiles" class="title-slide slide level1"><h1>Sinusoidal speed profiles</h1></section><section id="why-not" class="slide level2">
+<h2>Why not?</h2>
+<p><span class="math display">\[
+\omega = \omega_{max} sin\left(\frac{x}{\lambda}\right)
+\]</span></p>
+<p><span class="math display">\[
+\dot{\omega} = \frac{\omega_{max}}{\lambda} cos\left(\frac{x}{\lambda}\right)
+\]</span></p>
+<p>Thanks <a href="http://micromouseonline.com">Peter</a>! 😄</p>
+</section><section id="theoretical-forces-straight" class="slide level2">
+<h2>Theoretical forces (straight)</h2>
+<p><span class="math display">\[
+F_α = {mα \over 2}
+\]</span></p>
+</section><section id="theoretical-forces-turn" class="slide level2">
+<h2>Theoretical forces (turn)</h2>
+<p>Angular acceleration</p>
+<p><span class="math display">\[
+F_{Δω} = {IΔω \over 2T}
+\]</span></p>
+<p>Centrifugal force</p>
+<p><span class="math display">\[
+F_ω = {mvω \over 2}
+\]</span></p>
+</section><section id="forces-on-each-tire" class="slide level2">
+<h2>Forces on each tire</h2>
+<p><span class="math display">\[
+F_R = \sqrt{(F_α + F_{Δω})^2 + F_ω^2} \\
+F_L = \sqrt{(F_α - F_{Δω})^2 + F_ω^2}
+\]</span></p>
+<p>While turning <span class="math inline">\(F_\alpha = 0\)</span>:</p>
+<p><span class="math display">\[
+F = \sqrt{\left({I\dot{\omega} \over 2T}\right)^2 + \left({mv\omega \over 2}\right)^2}
+\]</span></p>
+</section><section id="so" class="slide level2">
+<h2>So… 🎉 🎉</h2>
+<p><span class="math display">\[
+F = \sqrt{{I^2\omega_{max}^2 \over 4T^2\lambda^2} cos^2\left({x \over \lambda}\right) + {m^2 \omega_{max}^2 v^2 \over 4}  sin^2\left({x \over \lambda}\right)}
+\]</span></p>
+<p><span class="math display">\[
+F = \sqrt{k_1 cos^2\left({x \over \lambda}\right) + k_2 sin^2\left({x \over \lambda}\right)}
+\]</span></p>
+<p>If <span class="math inline">\(k_1 = k_2 = k_0^2\)</span>:</p>
+<p><span class="math display">\[
+F = k_0 \sqrt{cos^2\left({x \over \lambda}\right) + sin^2\left({x \over \lambda}\right)} = k_0
+\]</span></p>
+</section><section id="search-turn-trajectory" class="slide level2">
+<h2>Search turn trajectory</h2>
+<p><img data-src="./figures/turn-search-trajectory.png" /></p>
+</section><section id="search-turn-forces" class="slide level2">
+<h2>Search turn forces</h2>
+<p><img data-src="./figures/turn-search-forces.png" /></p>
+</section><section id="turn-trajectory" class="slide level2">
+<h2>90° turn trajectory</h2>
+<p><img data-src="./figures/turn-90-trajectory.png" /></p>
+</section><section id="turn-forces" class="slide level2">
+<h2>90° turn forces</h2>
+<p><img data-src="./figures/turn-90-forces.png" /></p>
+</section><section id="other-trajectories" class="slide level2">
+<h2>Other trajectories</h2>
+<p><img data-src="./figures/turn-135-trajectory.png" /></p>
+<p><a href="https://github.com/Bulebots/bulebule/blob/master/scripts/notebooks/sinusoidal_turns.ipynb">Notebook on GitHub</a></p>
+</section><section id="advantages" class="slide level2">
+<h2>Advantages</h2>
+<ul>
+<li>Constant force</li>
+<li>Linear speed does not affect turn parameters!</li>
+</ul>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="maze-solving-algorithm" class="title-slide slide level1"><h1>Maze-solving algorithm</h1></section><section id="floodfill" class="slide level2">
+<h2>Floodfill 🌊</h2>
+<ol type="1">
+<li>Assume there are no walls</li>
+<li>Calculate distances to target</li>
+<li>While goal not reached…</li>
+<li>Go to the cell that is closest to the target</li>
+<li>Update walls</li>
+<li>Update distances</li>
+</ol>
+</section><section class="slide level2">
+
+<video src="./videos/maze-simulator.mp4" controls muted>
+</video>
+</section><section id="update-process" class="slide level2">
+<h2>Update process 👀</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Initialize distances</span></a>
+<a class="sourceLine" id="cb1-2" title="2">distances <span class="op">=</span> inf</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="cf">for</span> goal <span class="kw">in</span> goal_cells:</a>
+<a class="sourceLine" id="cb1-4" title="4">  queue.push(goal)</a>
+<a class="sourceLine" id="cb1-5" title="5">  distances[goal] <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="co"># Flood fill</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="cf">while</span> <span class="kw">not</span> queue.is_empty():</a>
+<a class="sourceLine" id="cb1-9" title="9">    cell <span class="op">=</span> queue.pop()</a>
+<a class="sourceLine" id="cb1-10" title="10">    distance <span class="op">=</span> distances[cell] <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb1-11" title="11">    <span class="cf">for</span> direction <span class="kw">in</span> [<span class="st">&quot;east&quot;</span>, <span class="st">&quot;south&quot;</span>, <span class="st">&quot;west&quot;</span>, <span class="st">&quot;north&quot;</span>]:</a>
+<a class="sourceLine" id="cb1-12" title="12">        <span class="cf">if</span> cell.has_wall(direction):</a>
+<a class="sourceLine" id="cb1-13" title="13">            <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb1-14" title="14">        neighbor <span class="op">=</span> cell.neighbor(direction)</a>
+<a class="sourceLine" id="cb1-15" title="15">        <span class="cf">if</span> distances[neighbor] <span class="op">&lt;=</span> distance:</a>
+<a class="sourceLine" id="cb1-16" title="16">            <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb1-17" title="17">        distances[neighbor] <span class="op">=</span> distance</a>
+<a class="sourceLine" id="cb1-18" title="18">        queue.push(neighbor)</a></code></pre></div>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="software-design" class="title-slide slide level1"><h1>Software design</h1></section><section id="sensors-state-machine" class="slide level2">
+<h2>Sensors state machine</h2>
+<ul>
+<li>16 KHz trigger</li>
+<li>Sequentially power on and off</li>
+<li>4 states * 4 sensors</li>
+</ul>
+</section><section id="systick" class="slide level2">
+<h2>Systick</h2>
+<ul>
+<li>1 KHz trigger</li>
+<li>Update ideal speed, encoder, distances</li>
+<li>Motor control</li>
+</ul>
+</section><section id="main" class="slide level2">
+<h2>Main</h2>
+<ul>
+<li>Setup</li>
+<li>Buttons, debug LEDs</li>
+<li>Speed profiles</li>
+<li>Algorithm</li>
+<li>Communication</li>
+</ul>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="required-tools" class="title-slide slide level1"><h1>Required tools</h1></section><section id="hardware" class="slide level2">
+<h2>Hardware</h2>
+<ul>
+<li>Battery charger</li>
+<li>Power supply</li>
+<li>Programmer</li>
+<li>Soldering station</li>
+<li>Polimeter</li>
+<li>Logic analyzer</li>
+<li>Oscilloscope</li>
+</ul>
+</section><section id="software" class="slide level2">
+<h2>Software</h2>
+<ul>
+<li><strong>C language</strong> - libopencm3, gcc, clang format</li>
+<li><strong>Python</strong> - notebooks, scripts, communication</li>
+<li><strong>Continuous integration</strong> - github, travis</li>
+<li><strong>Reviews &amp; management</strong> - github</li>
+<li><strong>Documentation</strong> - doxygen, sphinx</li>
+<li><strong>Board design</strong> - upverter</li>
+</ul>
+</section><section id="maze" class="slide level2">
+<h2>Maze</h2>
+<p><img data-src="./figures/maze_home.jpg" /></p>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="logging" class="title-slide slide level1"><h1>Logging</h1></section><section class="slide level2">
+
+<p><img data-src="./figures/yoda.jpg" /></p>
+</section><section id="plotting" class="slide level2">
+<h2>Plotting</h2>
+<p><img data-src="./figures/log.png" style="width:60.0%" /></p>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="costs" class="title-slide slide level1"><h1>Costs</h1></section><section id="very-optimistic-costs" class="slide level2">
+<h2>Very optimistic costs</h2>
+<ul>
+<li>Around 60 €</li>
+<li>Half is just for motors+encoders (second hand)</li>
+<li>Electronic parts and boards are really cheap (carefully selected)</li>
+</ul>
+</section><section id="realistic-costs" class="slide level2">
+<h2>Realistic costs</h2>
+<ul>
+<li>Lots</li>
+<li>Replacements</li>
+<li>Shipping costs</li>
+<li>More than 100 €</li>
+<li>Not counting tools, maze…</li>
+</ul>
+</section><section id="and-then" class="slide level2">
+<h2>And then…</h2>
+<p><img data-src="./figures/double-robot.jpg" /></p>
+</section><section id="time" class="slide level2">
+<h2>Time… 😂</h2>
+</section></section>
+<section data-background="markdownrevealstyle/background.svg"><section id="thats-all" class="title-slide slide level1"><h1>That’s all! 🎉</h1></section><section id="resources" class="slide level2">
+<h2>Resources 🔗</h2>
+<dl>
+<dt><strong>Bulebots</strong></dt>
+<dd><ul>
+<li><a href="https://github.com/Bulebots/bulebule">github.com/Bulebots</a></li>
+</ul>
+</dd>
+<dd><ul>
+<li><a href="https://bulebule.readthedocs.io">bulebule.readthedocs.io</a></li>
+</ul>
+</dd>
+<dt><strong>Peter Harrison</strong></dt>
+<dd><ul>
+<li><a href="http://micromouseonline.com">micromouseonline.com</a></li>
+</ul>
+</dd>
+<dt><strong>Green Ye</strong></dt>
+<dd><ul>
+<li><a href="http://www.greenye.net/">www.greenye.net</a></li>
+</ul>
+</dd>
+<dd><ul>
+<li><a href="http://micromouseusa.com%3E">micromouseusa.com</a></li>
+</ul>
+</dd>
+</dl>
+</section><section id="thanks" class="slide level2">
+<h2>Thanks! ❤️</h2>
+</section></section>
+    </div>
+  </div>
+
+  <script src="revealjs/lib/js/head.min.js"></script>
+  <script src="revealjs/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: false,
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: true,
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'revealjs/plugin/zoom-js/zoom.js', async: true },
+          { src: 'revealjs/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
